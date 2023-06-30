@@ -1,0 +1,18 @@
+Package: tvdenoising
+Title: Univariate total variation denoising via dynamic programming.
+Version: 1.0.0
+Authors@R: c(
+  person("Ryan", "Tibshirani",
+         role = "aut"),
+  person("Addison", "Hu",
+         role = c("cre"),
+         email = "mail@huisaddison.com"))
+Date: 2023-06-29
+Description: Implementation of univariate total variation denoising
+    (aka fused lasso signal approximator) using the linear-time dynamic
+    programming approach of Johnson (2013).
+License: MIT + file LICENSE
+Imports: Rcpp (>= 1.0.10)
+LinkingTo: Rcpp
+RoxygenNote: 7.2.3
+Encoding: UTF-8
