@@ -6,6 +6,8 @@ extern "C"{
 
 using Rcpp::NumericVector;
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 //' Univariate total variation denoising
 //'
 //' Total variation denoising is performed at a fixed tuning parameter value

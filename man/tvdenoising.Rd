@@ -9,10 +9,10 @@ tvdenoising(y, lambda, weights = NULL)
 \arguments{
 \item{y}{Numeric vector of observations to be denoised.}
 
-\item{lambda}{Regularization parameter.}
+\item{lambda}{Scalar. A non-negative regularization parameter.}
 
 \item{weights}{Numeric vector of the same length as y, containing
-   observation weights.  The default is `NULL`, which corresponds to unity
+   observation weights. The default is `NULL`, which corresponds to unity
 weights.}
 }
 \value{
@@ -22,6 +22,12 @@ Denoised observations.
 Total variation denoising is performed at a fixed tuning parameter value
 using the linear-time dynamic programming approach of Johnson (2013).
 Observation weights may be optionally specified.
+}
+\examples{
+y <- c(rnorm(30), rnorm(40, 2), rnorm(30))
+yhat <- tvdenoising(y, 10)
+plot(y, pch = 16)
+lines(yhat, col = 2)
 }
 \references{
 Johnson (2013), "A dynamic programming algorithm for the fused
