@@ -22,9 +22,12 @@ pak::pak("glmgen/tvdenoising")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(tvdenoising)
-## basic example code
+y <- c(rnorm(30), rnorm(40, 2), rnorm(30))
+yhat <- tvdenoising(y, 10)
+plot(y, pch = 16)
+lines(yhat, col = 2)
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
