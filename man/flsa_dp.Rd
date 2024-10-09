@@ -19,3 +19,4 @@ Numeric vector of the same length as y, containing denoised
 Total variation denoising is performed at a fixed tuning parameter value
 using the linear-time dynamic programming approach of Johnson (2013).
 }
+\keyword{internal}

@@ -10,6 +10,7 @@
 #' @param lambda Regularization parameter.
 #' @return Numeric vector of the same length as y, containing denoised
 #' 	observations.
+#' @keywords internal
 flsa_dp <- function(y, lambda) {
     .Call('_tvdenoising_flsa_dp', PACKAGE = 'tvdenoising', y, lambda)
 }
@@ -26,6 +27,7 @@ flsa_dp <- function(y, lambda) {
 #'		observation weights.
 #' @return Numeric vector of the same length as y, containing denoised
 #' 	observations.
+#' @keywords internal
 flsa_dp_weighted <- function(y, lambda, weights) {
     .Call('_tvdenoising_flsa_dp_weighted', PACKAGE = 'tvdenoising', y, lambda, weights)
 }
