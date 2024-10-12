@@ -43,12 +43,16 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck
+          extra-packages: any::rcmdcheck devtools testthat 
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
-          
+
+      # Run tests using devtools::test()
+      - name: Run tests
+        run: |
+          R -e 'devtools::test()'  # This will run all tests in the testthat folder
 
