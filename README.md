@@ -3,8 +3,11 @@
 
 # tvdenoising
 
+
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
+
 
 This package provides an `R` frontend to a `C` implementation of
 linear-time univariate total variation denoising via dynamic programming
