@@ -6,6 +6,8 @@ extern "C"{
 
 using Rcpp::NumericVector;
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 //' Univariate total variation denoising
 //'
 //' Total variation denoising is performed at a fixed tuning parameter value
@@ -15,6 +17,7 @@ using Rcpp::NumericVector;
 //' @param lambda Regularization parameter.
 //' @return Numeric vector of the same length as y, containing denoised
 //' 	observations.
+//' @keywords internal
 // [[Rcpp::export]]
 NumericVector flsa_dp(NumericVector y, double lambda) {
   int n = y.size();
@@ -36,6 +39,7 @@ NumericVector flsa_dp(NumericVector y, double lambda) {
 //'		observation weights.
 //' @return Numeric vector of the same length as y, containing denoised
 //' 	observations.
+//' @keywords internal
 // [[Rcpp::export]]
 NumericVector flsa_dp_weighted(NumericVector y, double lambda,
     NumericVector weights) {
