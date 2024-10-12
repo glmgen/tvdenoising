@@ -3,10 +3,10 @@
 
 # tvdenoising
 
-
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml/badge.svg?branch=xli-branch)](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml?branch=xli-branch)
 <!-- badges: end -->
+
 
 
 This package provides an `R` frontend to a `C` implementation of
