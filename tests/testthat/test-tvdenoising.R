@@ -49,11 +49,11 @@ test_that("tvdenoising handles incorrect input properly", {
   lambda <- "not a number"
   
   # when lambda is not numeric
-  expect_error(tvdenoising(y, lambda))
+  expect_snapshot(error = TRUE, tvdenoising(y, lambda))
   
   # when weights length does not match y
   weights <- c(1, 2)
-  expect_error(tvdenoising(y, 1, weights))
+  expect_snapshot(error = TRUE, tvdenoising(y, 1, weights))
 })
 
 
