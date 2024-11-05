@@ -24,6 +24,8 @@ test_that("tvdenoising works correctly with no weights", {
   expect_type(result, "double")
   expect_length(result, length(y))
   expect_equal(result, expected_result)
+  expect_warning(result2 <- tvdenoising(y, lambda, 2))
+  expect_equal(result2, expected_result)
 })
 
 test_that("tvdenoising works correctly with weights", {
