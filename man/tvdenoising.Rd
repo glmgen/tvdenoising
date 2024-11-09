@@ -13,7 +13,7 @@ tvdenoising(y, lambda, weights = NULL)
 
 \item{weights}{Numeric vector of the same length as y, containing
    observation weights. The default is `NULL`, which corresponds to unity
-weights.}
+weights. These will automatically be forced to sum to `length(y)`.}
 }
 \value{
 Denoised observations.
