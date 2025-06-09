@@ -18,7 +18,7 @@ the exact solution, for a given regularization level $\lambda$. You can
 also find a concise explanation of the algorithm at [this
 link](https://www.stat.berkeley.edu/~ryantibs/papers/tvdp.pdf).
 
-<img src="man/figures/README-tvd-1.png" width="65%" />
+<img src="man/figures/README-tvd-1.png" width="90%" />
 
 ## Installation
 

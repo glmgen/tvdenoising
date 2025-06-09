@@ -9,10 +9,8 @@ url: https://glmgen.github.io/tvdenoising/
 
 home:
   links:
-  - text: Official paper
+  - text: Johnson (2013) paper
     href: https://doi.org/10.1080/10618600.2012.681238
-  - text: Concise explanation
-    href: https://www.stat.berkeley.edu/~ryantibs/papers/tvdp.pdf
 repo:
   url:
     home: https://github.com/glmgen/tvdenoising/tree/main/

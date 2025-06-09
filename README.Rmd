@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "65%"
+  out.width = "90%"
 )
 ```
 
@@ -27,7 +27,7 @@ the exact solution, for a given regularization level $\lambda$. You can also
 find a concise explanation of the algorithm at 
 [this link](https://www.stat.berkeley.edu/~ryantibs/papers/tvdp.pdf).
 
-```{r tvd, echo=FALSE, dev="png", fig.width=5, fig.height=3, dpi=300}
+```{r tvd, echo=FALSE, dev="png", fig.width=5.5, fig.height=3, dpi=300}
 library(tvdenoising)
 set.seed(3)
 n = 100
