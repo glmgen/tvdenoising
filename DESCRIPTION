@@ -1,20 +1,31 @@
 Package: tvdenoising
-Title: Univariate total variation denoising via dynamic programming
+Title: Univariate Total Variation Denoising
 Version: 1.0.0
 Authors@R: c(
-    person("Ryan", "Tibshirani", role = "aut"),
-    person("Addison", "Hu", , "mail@huisaddison.com", role = "cre")
+    person("Addison", "Hu", role = "ctb"),
+    person("Ryan", "Tibshirani", , "ryantibs@gmail.com", 
+        role = c("aut", "cre"))
   )
-Description: Implementation of univariate total variation denoising (aka
-    fused lasso signal approximator) using the linear-time dynamic
-    programming approach of Johnson (2013).
+Description: Total variation denoising can be used to approximate a given
+    sequence of noisy observations by a piecewise constant sequence, with 
+    adaptively-chosen break points. An efficient linear-time algorithm for 
+    total variation denoising is provided here, based on Johnson (2013)
+    <doi:10.1080/10618600.2012.681238>.
 License: MIT + file LICENSE
+URL: https://github.com/glmgen/tvdenoising, https://glmgen.github.io/tvdenoising/
+BugReports: https://github.com/glmgen/tvdenoising/issues
 Imports: 
-    Rcpp (>= 1.0.10)
+    Rcpp,
+    rlang
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 LinkingTo: 
     Rcpp
+VignetteBuilder: knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
