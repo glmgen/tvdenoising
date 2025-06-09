@@ -7,21 +7,19 @@
 tvdenoising(y, lambda, weights = NULL)
 }
 \arguments{
-\item{y}{Numeric vector of observations to be denoised.}
+\item{y}{Vector of observations to be denoised.}
 
-\item{lambda}{Scalar. A non-negative regularization parameter.}
+\item{lambda}{Regularization parameter value. Must be >= 0.}
 
-\item{weights}{Numeric vector of the same length as y, containing
-   observation weights. The default is `NULL`, which corresponds to unity
-weights. These will automatically be forced to sum to `length(y)`.}
+\item{weights}{Vector of observation weights. The default is `NULL`, which 
+corresponds to unity weights. This vector must have the same length as `y`.}
 }
 \value{
-Denoised observations.
+Vector of denoised observations.
 }
 \description{
-Total variation denoising is performed at a fixed tuning parameter value
-using the linear-time dynamic programming approach of Johnson (2013).
-Observation weights may be optionally specified.
+Denoises a sequence of observations by solving the univariate total variation 
+denoising optimization problem at a given regularization level.
 }
 \examples{
 y <- c(rnorm(30), rnorm(40, 2), rnorm(30))

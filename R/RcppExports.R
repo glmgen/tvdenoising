@@ -32,6 +32,14 @@ flsa_dp_weighted <- function(y, lambda, weights) {
     .Call('_tvdenoising_flsa_dp_weighted', PACKAGE = 'tvdenoising', y, lambda, weights)
 }
 
+rcpp_tvd <- function(y, lambda) {
+    .Call('_tvdenoising_rcpp_tvd', PACKAGE = 'tvdenoising', y, lambda)
+}
+
+rcpp_wtvd <- function(y, lambda, weights) {
+    .Call('_tvdenoising_rcpp_wtvd', PACKAGE = 'tvdenoising', y, lambda, weights)
+}
+
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
     .Call('_tvdenoising_RcppExport_registerCCallable', PACKAGE = 'tvdenoising')

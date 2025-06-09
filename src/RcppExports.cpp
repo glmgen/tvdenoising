@@ -84,6 +84,31 @@ RcppExport SEXP _tvdenoising_flsa_dp_weighted(SEXP ySEXP, SEXP lambdaSEXP, SEXP 
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// rcpp_tvd
+NumericVector rcpp_tvd(NumericVector y, double lambda);
+RcppExport SEXP _tvdenoising_rcpp_tvd(SEXP ySEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_tvd(y, lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wtvd
+NumericVector rcpp_wtvd(NumericVector y, double lambda, NumericVector weights);
+RcppExport SEXP _tvdenoising_rcpp_wtvd(SEXP ySEXP, SEXP lambdaSEXP, SEXP weightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type weights(weightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wtvd(y, lambda, weights));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _tvdenoising_RcppExport_validate(const char* sig) { 
@@ -106,6 +131,8 @@ RcppExport SEXP _tvdenoising_RcppExport_registerCCallable() {
 static const R_CallMethodDef CallEntries[] = {
     {"_tvdenoising_flsa_dp", (DL_FUNC) &_tvdenoising_flsa_dp, 2},
     {"_tvdenoising_flsa_dp_weighted", (DL_FUNC) &_tvdenoising_flsa_dp_weighted, 3},
+    {"_tvdenoising_rcpp_tvd", (DL_FUNC) &_tvdenoising_rcpp_tvd, 2},
+    {"_tvdenoising_rcpp_wtvd", (DL_FUNC) &_tvdenoising_rcpp_wtvd, 3},
     {"_tvdenoising_RcppExport_registerCCallable", (DL_FUNC) &_tvdenoising_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
