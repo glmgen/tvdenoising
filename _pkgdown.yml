@@ -2,11 +2,9 @@ template:
   bootstrap: 5
   math-rendering: katex
   bslib:
-    primary: "#0054AD"
-    danger: "#A6081A"
-
+    primary: '#0054AD'
+    danger: '#A6081A'
 url: https://glmgen.github.io/tvdenoising/
-
 home:
   links:
   - text: Johnson (2013) paper
@@ -17,3 +15,4 @@ repo:
     source: https://github.com/glmgen/tvdenoising/blob/main/
     issue: https://github.com/glmgen/tvdenoising/issues
     user: https://github.com/
+
