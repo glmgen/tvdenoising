@@ -3,16 +3,25 @@
 \docType{package}
 \name{tvdenoising-package}
 \alias{tvdenoising-package}
-\title{tvdenoising: Univariate total variation denoising via dynamic programming}
+\title{tvdenoising: Univariate Total Variation Denoising}
 \description{
-Implementation of univariate total variation denoising (aka fused lasso signal approximator) using the linear-time dynamic programming approach of Johnson (2013).
+Total variation denoising can be used to approximate a given sequence of noisy observations by a piecewise constant sequence, with adaptively-chosen break points. An efficient linear-time algorithm for total variation denoising is provided here, based on Johnson (2013) \doi{10.1080/10618600.2012.681238}.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/glmgen/tvdenoising}
+  \item \url{https://glmgen.github.io/tvdenoising/}
+  \item Report bugs at \url{https://github.com/glmgen/tvdenoising/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: Addison Hu \email{mail@huisaddison.com}
+\strong{Maintainer}: Ryan Tibshirani \email{ryantibs@gmail.com}
 
-Authors:
+Other contributors:
 \itemize{
-  \item Ryan Tibshirani
+  \item Addison Hu [contributor]
 }
 
 }
