@@ -15,7 +15,7 @@ test_that("Simple weighted", {
   expect_equal(result, expected_result)
 })
 
-test_that("Uniform weights check", {  
+test_that("Uniform weights check", {
   y = c(1, 2, 3, 5, 8, 13, 21)
   lambda = 1
   uniform_weights1 = rep(1, length(y))
@@ -27,13 +27,14 @@ test_that("Uniform weights check", {
   expect_equal(result_no_weights, result_with_weights2)
 })
 
-test_that("No regularization check", {  
+test_that("No regularization check", {
   y = c(1, 2, 3, 5, 8, 13, 21)
   result = tvdenoising(y, 0)
   expect_equal(result, y)
 })
 
-test_that("genlasso check", {  
+test_that("genlasso check", {
+  skip_on_cran()
   y = rnorm(100)
   lambda = 5
   path = genlasso::fusedlasso1d(y)
