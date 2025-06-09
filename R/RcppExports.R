@@ -9,3 +9,7 @@ rcpp_wtvd <- function(y, lambda, weights) {
     .Call('_tvdenoising_rcpp_wtvd', PACKAGE = 'tvdenoising', y, lambda, weights)
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('_tvdenoising_RcppExport_registerCCallable', PACKAGE = 'tvdenoising')
+})
