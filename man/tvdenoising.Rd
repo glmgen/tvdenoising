@@ -36,7 +36,7 @@ by Johnson (2013).
 }
 \examples{
 y <- c(rep(0, 50), rep(3, 50)) + rnorm(100)
-yhat <- tvdenoising(y, lambda)
+yhat <- tvdenoising(y, 5)
 plot(y, pch = 16, col = "gray60")
 lines(yhat, col = "firebrick", lwd = 2)
 }
