@@ -113,6 +113,7 @@ void wtvd(int n, double *y, double lambda, double *w, double *theta) {
   delete[] tp;
 }
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector rcpp_wtvd(NumericVector y, double lambda, NumericVector weights) {
   int n = y.size();

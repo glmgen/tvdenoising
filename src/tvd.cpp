@@ -113,6 +113,8 @@ void tvd(int n, double *y, double lambda, double *theta) {
   delete[] tp;
 }
 
+
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector rcpp_tvd(NumericVector y, double lambda) {
   int n = y.size();
