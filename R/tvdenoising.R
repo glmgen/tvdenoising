@@ -35,26 +35,3 @@ tvdenoising <- function(y, lambda, weights = NULL) {
     return(rcpp_wtvd(y, lambda, weights))
   }
 }
-
-#' Old implementation of tvdenoising
-#' @export
-tvdenoising2 <- function(y, lambda, weights = NULL) {
-  if (!is.numeric(y)) stop("`y` must be numeric.")
-  if (!is.numeric(lambda)) stop("`lambda` must be numeric.")
-  if (length(lambda) != 1L) stop("`lambda` must be a scalar.")
-  if (lambda < 0) stop("`lambda` must be non-negative.")
-  if (is.null(weights)) {
-    return(flsa_dp(y, lambda))
-  } else {
-    n <- length(y)
-    if (!is.numeric(weights)) stop("`weights` must be numeric or NULL.")
-    if (length(weights) == 1L) {
-      warning("`weights` is a scalar. Using unweighted tvdenoising.")
-      return(flsa_dp(y, lambda))
-    }
-    if (length(weights) != n) stop("`weights` must be the same size as `y`.")
-    if (any(weights < 0)) stop("`weights` must be non-negative.")
-    weights <- weights / sum(weights) * n
-    return(flsa_dp_weighted(y, lambda, weights))
-  }
-}

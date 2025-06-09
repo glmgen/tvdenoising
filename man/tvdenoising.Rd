@@ -22,10 +22,10 @@ Denoises a sequence of observations by solving the univariate total variation
 denoising optimization problem at a given regularization level.
 }
 \examples{
-y <- c(rnorm(30), rnorm(40, 2), rnorm(30))
-yhat <- tvdenoising(y, 10)
-plot(y, pch = 16)
-lines(yhat, col = 2)
+y <- c(rep(0, 50), rep(3, 50)) + rnorm(100)
+yhat <- tvdenoising(y, lambda)
+plot(y, pch = 16, col = "gray60")
+lines(yhat, col = "firebrick", lwd = 2)
 }
 \references{
 Johnson (2013), "A dynamic programming algorithm for the fused
