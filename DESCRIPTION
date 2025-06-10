@@ -3,6 +3,7 @@ Title: Univariate Total Variation Denoising
 Version: 1.0.0
 Authors@R: c(
     person("Addison", "Hu", role = "ctb"),
+    person("Daniel", "McDonald", role = "ctb"),
     person("Ryan", "Tibshirani", , "ryantibs@gmail.com", 
         role = c("aut", "cre", "cph"))
   )
