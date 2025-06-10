@@ -12,13 +12,13 @@ status](https://www.r-pkg.org/badges/version/tvdenoising)](https://CRAN.R-projec
 
 The `tvdenoising` package provides an implementation of an efficient
 linear-time dynamic programming algorithm for univariate total variation
-denoising, due to [Johnson
-(2013)](https://doi.org/10.1080/10618600.2012.681238), which computes
-the exact solution, for a given regularization level $\lambda$. You can
-also find a concise explanation of the algorithm at [this
+denoising (also called fused lasso signal approximation), due to
+[Johnson (2013)](https://doi.org/10.1080/10618600.2012.681238), which
+computes the exact solution, for a given regularization level $\lambda$.
+You can also find a concise explanation of the algorithm at [this
 link](https://www.stat.berkeley.edu/~ryantibs/papers/tvdp.pdf).
 
-<img src="man/figures/README-tvd-1.png" width="90%" />
+<img src="man/figures/README-tvd-1.png" width="95%" />
 
 ## Installation
 
