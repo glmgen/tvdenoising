@@ -34,11 +34,9 @@ test_that("No regularization check", {
 })
 
 test_that("genlasso check", {
-  skip_on_cran()
-  y = rnorm(100)
-  lambda = 5
-  path = genlasso::fusedlasso1d(y)
-  result1 = as.numeric(coef(path, lambda)$beta)
-  result2 = tvdenoising(y, lambda)
+  saved = readRDS(test_path("genlasso-dat.rds"))
+  lambda = saved$lambda
+  result1 = saved$result1
+  result2 = tvdenoising(saved$y, lambda)
   expect_equal(result1, result2)
 })
