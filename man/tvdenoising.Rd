@@ -7,29 +7,40 @@
 tvdenoising(y, lambda, weights = NULL)
 }
 \arguments{
-\item{y}{Numeric vector of observations to be denoised.}
+\item{y}{Vector of observations to be denoised.}
 
-\item{lambda}{Scalar. A non-negative regularization parameter.}
+\item{lambda}{Regularization parameter value. Must be >= 0.}
 
-\item{weights}{Numeric vector of the same length as y, containing
-   observation weights. The default is `NULL`, which corresponds to unity
-weights. These will automatically be forced to sum to `length(y)`.}
+\item{weights}{Vector of observation weights. The default is \code{NULL}, which
+corresponds to unity weights. This vector must have the same length as \code{y}.}
 }
 \value{
-Denoised observations.
+Vector of denoised observations.
 }
 \description{
-Total variation denoising is performed at a fixed tuning parameter value
-using the linear-time dynamic programming approach of Johnson (2013).
-Observation weights may be optionally specified.
+Denoises a sequence of observations by solving the univariate total variation
+denoising optimization problem at a given regularization level.
+}
+\details{
+This function minimizes the univariate total variation denoising
+(also called fused lasso) criterion squares criterion
+\deqn{
+  \frac{1}{2} \sum_{i=1}^n (y_i - \theta_i)^2 + 
+    \lambda \sum_{i=1}^{n-1} |\theta_{i+1} - \theta_i|,
+  }
+over \eqn{\theta}. This is a special structured convex optimization problem
+which can be solved in linear time (\eqn{O(n)} operations) using algorithms
+based on dynamic programming (Viterbi) or taut string methods. The current
+function implements a highly-efficient dynamic programming method developed
+by Johnson (2013).
 }
 \examples{
-y <- c(rnorm(30), rnorm(40, 2), rnorm(30))
-yhat <- tvdenoising(y, 10)
-plot(y, pch = 16)
-lines(yhat, col = 2)
+y <- c(rep(0, 50), rep(3, 50)) + rnorm(100)
+yhat <- tvdenoising(y, 5)
+plot(y, pch = 16, col = "gray60")
+lines(yhat, col = "firebrick", lwd = 2)
 }
 \references{
 Johnson (2013), "A dynamic programming algorithm for the fused
- lasso and L0-segmentation."
+lasso and L0-segmentation."
 }

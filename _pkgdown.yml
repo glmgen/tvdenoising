@@ -1,0 +1,18 @@
+template:
+  bootstrap: 5
+  math-rendering: katex
+  bslib:
+    primary: '#0054AD'
+    danger: '#A6081A'
+url: https://glmgen.github.io/tvdenoising/
+home:
+  links:
+  - text: Johnson (2013) paper
+    href: https://doi.org/10.1080/10618600.2012.681238
+repo:
+  url:
+    home: https://github.com/glmgen/tvdenoising/tree/main/
+    source: https://github.com/glmgen/tvdenoising/blob/main/
+    issue: https://github.com/glmgen/tvdenoising/issues
+    user: https://github.com/
+

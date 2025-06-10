@@ -1,36 +1,36 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. -->
 
 # tvdenoising
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml/badge.svg?branch=xli-branch)](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml?branch=xli-branch)
+
+[![R-CMD-check](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/glmgen/tvdenoising/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/tvdenoising)](https://CRAN.R-project.org/package=tvdenoising)
 <!-- badges: end -->
 
+The `tvdenoising` package provides an implementation of an efficient
+linear-time dynamic programming algorithm for univariate total variation
+denoising, due to [Johnson
+(2013)](https://doi.org/10.1080/10618600.2012.681238), which computes
+the exact solution, for a given regularization level $\lambda$. You can
+also find a concise explanation of the algorithm at [this
+link](https://www.stat.berkeley.edu/~ryantibs/papers/tvdp.pdf).
 
-
-This package provides an `R` frontend to a `C` implementation of
-linear-time univariate total variation denoising via dynamic programming
-(Johnson 2013).
+<img src="man/figures/README-tvd-1.png" width="90%" />
 
 ## Installation
 
-You can install the development version of tvdenoising from
-[GitHub](https://github.com/) with:
+To install the released version from CRAN:
+
+``` r
+install.packages("tvdenoising")
+```
+
+To install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
 pak::pak("glmgen/tvdenoising")
 ```
-
-## Example
-
-``` r
-library(tvdenoising)
-y <- c(rnorm(30), rnorm(40, 2), rnorm(30))
-yhat <- tvdenoising(y, 10)
-plot(y, pch = 16)
-lines(yhat, col = 2)
-```
-
-<img src="man/figures/README-example-1.png" width="100%" />

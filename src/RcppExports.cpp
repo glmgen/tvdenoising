@@ -13,22 +13,22 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// flsa_dp
-NumericVector flsa_dp(NumericVector y, double lambda);
-static SEXP _tvdenoising_flsa_dp_try(SEXP ySEXP, SEXP lambdaSEXP) {
+// rcpp_tvd
+NumericVector rcpp_tvd(NumericVector y, double lambda);
+static SEXP _tvdenoising_rcpp_tvd_try(SEXP ySEXP, SEXP lambdaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
     Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
-    rcpp_result_gen = Rcpp::wrap(flsa_dp(y, lambda));
+    rcpp_result_gen = Rcpp::wrap(rcpp_tvd(y, lambda));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _tvdenoising_flsa_dp(SEXP ySEXP, SEXP lambdaSEXP) {
+RcppExport SEXP _tvdenoising_rcpp_tvd(SEXP ySEXP, SEXP lambdaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_tvdenoising_flsa_dp_try(ySEXP, lambdaSEXP));
+        rcpp_result_gen = PROTECT(_tvdenoising_rcpp_tvd_try(ySEXP, lambdaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -48,23 +48,23 @@ RcppExport SEXP _tvdenoising_flsa_dp(SEXP ySEXP, SEXP lambdaSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// flsa_dp_weighted
-NumericVector flsa_dp_weighted(NumericVector y, double lambda, NumericVector weights);
-static SEXP _tvdenoising_flsa_dp_weighted_try(SEXP ySEXP, SEXP lambdaSEXP, SEXP weightsSEXP) {
+// rcpp_wtvd
+NumericVector rcpp_wtvd(NumericVector y, double lambda, NumericVector weights);
+static SEXP _tvdenoising_rcpp_wtvd_try(SEXP ySEXP, SEXP lambdaSEXP, SEXP weightsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
     Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type weights(weightsSEXP);
-    rcpp_result_gen = Rcpp::wrap(flsa_dp_weighted(y, lambda, weights));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wtvd(y, lambda, weights));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _tvdenoising_flsa_dp_weighted(SEXP ySEXP, SEXP lambdaSEXP, SEXP weightsSEXP) {
+RcppExport SEXP _tvdenoising_rcpp_wtvd(SEXP ySEXP, SEXP lambdaSEXP, SEXP weightsSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_tvdenoising_flsa_dp_weighted_try(ySEXP, lambdaSEXP, weightsSEXP));
+        rcpp_result_gen = PROTECT(_tvdenoising_rcpp_wtvd_try(ySEXP, lambdaSEXP, weightsSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -89,23 +89,23 @@ RcppExport SEXP _tvdenoising_flsa_dp_weighted(SEXP ySEXP, SEXP lambdaSEXP, SEXP 
 static int _tvdenoising_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("NumericVector(*flsa_dp)(NumericVector,double)");
-        signatures.insert("NumericVector(*flsa_dp_weighted)(NumericVector,double,NumericVector)");
+        signatures.insert("NumericVector(*rcpp_tvd)(NumericVector,double)");
+        signatures.insert("NumericVector(*rcpp_wtvd)(NumericVector,double,NumericVector)");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _tvdenoising_RcppExport_registerCCallable() { 
-    R_RegisterCCallable("tvdenoising", "_tvdenoising_flsa_dp", (DL_FUNC)_tvdenoising_flsa_dp_try);
-    R_RegisterCCallable("tvdenoising", "_tvdenoising_flsa_dp_weighted", (DL_FUNC)_tvdenoising_flsa_dp_weighted_try);
+    R_RegisterCCallable("tvdenoising", "_tvdenoising_rcpp_tvd", (DL_FUNC)_tvdenoising_rcpp_tvd_try);
+    R_RegisterCCallable("tvdenoising", "_tvdenoising_rcpp_wtvd", (DL_FUNC)_tvdenoising_rcpp_wtvd_try);
     R_RegisterCCallable("tvdenoising", "_tvdenoising_RcppExport_validate", (DL_FUNC)_tvdenoising_RcppExport_validate);
     return R_NilValue;
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_tvdenoising_flsa_dp", (DL_FUNC) &_tvdenoising_flsa_dp, 2},
-    {"_tvdenoising_flsa_dp_weighted", (DL_FUNC) &_tvdenoising_flsa_dp_weighted, 3},
+    {"_tvdenoising_rcpp_tvd", (DL_FUNC) &_tvdenoising_rcpp_tvd, 2},
+    {"_tvdenoising_rcpp_wtvd", (DL_FUNC) &_tvdenoising_rcpp_wtvd, 3},
     {"_tvdenoising_RcppExport_registerCCallable", (DL_FUNC) &_tvdenoising_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
