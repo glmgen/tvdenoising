@@ -4,7 +4,7 @@ Version: 1.0.0
 Authors@R: c(
     person("Addison", "Hu", role = "ctb"),
     person("Ryan", "Tibshirani", , "ryantibs@gmail.com", 
-        role = c("aut", "cre"))
+        role = c("aut", "cre", "cph"))
   )
 Description: Total variation denoising can be used to approximate a given
     sequence of noisy observations by a piecewise constant sequence, with 
