@@ -39,8 +39,8 @@ tvdenoising <- function(y, lambda, weights = NULL) {
   } 
   else {
     if (!is.numeric(weights)) rlang::abort("`weights` must be numeric.")
-    if (length(weights) != length(y) || any(weights < 0))
-      rlang::abort(paste("`weights` must be a nonnegative vector of the same",
+    if (length(weights) != length(y) || any(weights <= 0))
+      rlang::abort(paste("`weights` must be a positive vector of the same",
                          "length as `y`."))
     
     weights = weights / sum(weights) * length(y)
