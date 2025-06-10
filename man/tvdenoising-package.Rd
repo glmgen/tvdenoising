@@ -22,6 +22,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Addison Hu [contributor]
+  \item Daniel McDonald [contributor]
 }
 
 }
