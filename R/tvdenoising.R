@@ -6,8 +6,9 @@
 #' @param y Vector of observations to be denoised.
 #' @param lambda Regularization parameter value. Must be >= 0.
 #' @param weights Vector of observation weights. The default is `NULL`, which 
-#'   corresponds to unity weights. This vector must have the same length as `y`.
-#' @return Vector of denoised observations.
+#'   corresponds to unity weights. If specified, this vector must have the same
+#'   length as `y`, and must have positive entries.
+#' @return Vector of denoised values.
 #'
 #' @details This function minimizes the univariate total variation denoising
 #'   (also called fused lasso) criterion squares criterion

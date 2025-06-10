@@ -12,10 +12,11 @@ tvdenoising(y, lambda, weights = NULL)
 \item{lambda}{Regularization parameter value. Must be >= 0.}
 
 \item{weights}{Vector of observation weights. The default is \code{NULL}, which
-corresponds to unity weights. This vector must have the same length as \code{y}.}
+corresponds to unity weights. If specified, this vector must have the same
+length as \code{y}, and must have positive entries.}
 }
 \value{
-Vector of denoised observations.
+Vector of denoised values.
 }
 \description{
 Denoises a sequence of observations by solving the univariate total variation
