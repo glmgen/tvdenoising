@@ -6,8 +6,9 @@
 #' @param y Vector of observations to be denoised.
 #' @param lambda Regularization parameter value. Must be >= 0.
 #' @param weights Vector of observation weights. The default is `NULL`, which 
-#'   corresponds to unity weights. This vector must have the same length as `y`.
-#' @return Vector of denoised observations.
+#'   corresponds to unity weights. If specified, this vector must have the same
+#'   length as `y`, and must have positive entries.
+#' @return Vector of denoised values.
 #'
 #' @details This function minimizes the univariate total variation denoising
 #'   (also called fused lasso) criterion squares criterion
@@ -39,8 +40,8 @@ tvdenoising <- function(y, lambda, weights = NULL) {
   } 
   else {
     if (!is.numeric(weights)) rlang::abort("`weights` must be numeric.")
-    if (length(weights) != length(y) || any(weights < 0))
-      rlang::abort(paste("`weights` must be a nonnegative vector of the same",
+    if (length(weights) != length(y) || any(weights <= 0))
+      rlang::abort(paste("`weights` must be a positive vector of the same",
                          "length as `y`."))
     
     weights = weights / sum(weights) * length(y)
